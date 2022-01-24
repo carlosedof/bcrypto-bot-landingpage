@@ -1,0 +1,24 @@
+
+
+.row-common {
+  display: flex;
+  flex-direction: row;
+}
+.row-reverse-common {
+  display: flex;
+  flex-direction: row-reverse;
+}
+@media (max-width: 768px)
+{
+  .row-responsive {
+    flex-direction: column;
+  }
+  .row-responsive-full {
+    flex-direction: column;
+    width: 100% !important;
+  }
+  .row-full {
+    width: 100% !important;
+  }
+}
+

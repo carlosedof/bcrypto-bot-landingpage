@@ -1,0 +1,16 @@
+{
+  "pt": {
+    "home": "Início",
+    "features": "Funcionalidades",
+    "prices": "Preços",
+    "getStarted": "Conheça o bot",
+    "aboutUs": "Sobre"
+  },
+  "en": {
+    "home": "Home",
+    "features": "Features",
+    "prices": "Prices",
+    "getStarted": "Get started",
+    "aboutUs": "About us"
+  }
+}

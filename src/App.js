@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Header from "./components/header";
+import Cover from "./components/cover";
+import Features from "./components/features";
+import Prices from "./components/prices";
+import GetStarted from "./components/getStarted";
+import Footer from "./components/footer";
+import AboutUs from "./components/aboutUs";
 
+export const ApplicationContext = React.createContext({});
+
+const styles = {
+
+}
 function App() {
+    const [isResponsiveMenuVisible, setIsResponsiveMenuVisible] = useState()
+    const [lang, setLang] = useState('en')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ApplicationContext.Provider value={{lang, setLang}}>
+      <div className="main">
+        <section id='Header'>
+            <Header setIsResponsiveMenuVisible={setIsResponsiveMenuVisible} isResponsiveMenuVisible={isResponsiveMenuVisible} />
+        </section>
+        <section id='Cover'>
+            <Cover />
+        </section>
+        <section id='Features'>
+            <Features />
+        </section>
+        <section id='Prices'>
+            <Prices />
+        </section>
+        <section id='GetStarted'>
+            <GetStarted />
+        </section>
+        <section id='AboutUs'>
+            <AboutUs />
+        </section>
+      <Footer />
+
     </div>
+      </ApplicationContext.Provider>
   );
 }
 
