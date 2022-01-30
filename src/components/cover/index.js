@@ -1,6 +1,6 @@
 import React from 'react';
 import Background from '../../assets/BGgray.png';
-import Hero from '../../assets/BcoinTokenHero.webp';
+import Hero from '../../assets/BcoinTokenHero.png';
 import Window from '../../assets/window.png';
 
 const styles = {
@@ -24,7 +24,7 @@ const styles = {
 
 const Cover = () => {
     return <div style={styles.container}>
-        <img style={styles.img} src={Hero} />
+        <img style={styles.img} className={'bot-image'} src={Hero} />
         <img style={styles.window} src={Window} />
     </div>
 }

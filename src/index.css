@@ -34,19 +34,44 @@ code {
     monospace;
 }
 
+@keyframes opacity-blink {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+
+.bot-image {
+  animation-name: opacity-blink;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition: all 0.5s ease;
+}
+
+.card {
+  border: 1px solid white;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+  background-color: #4e4848;
+  color: white;
+  box-shadow: 1px 1px 4px white;
+  border-radius: 5px;
+  padding: 20px 10px;
+}
+
+.card:hover {
+  border: 2px solid white;
+  background-color: #282c34;
+  box-shadow: 3px 3px 15px white;
+  transform: scale(1.02);
+}
+
 @media (min-width: 769px) {
   .card {
-    border: 1px solid white;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
     width: 175px;
     height: 195px;
-    background-color: #4e4848;
-    color: white;
-    box-shadow: 1px 1px 10px white;
-    border-radius: 5px;
-    padding: 20px 10px;
+
   }
   .header {
     display: flex;
@@ -62,17 +87,8 @@ code {
 
 @media (max-width: 768px) {
   .card {
-    border: 1px solid white;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
     width: 210px;
     height: 195px;
-    background-color: #4e4848;
-    color: white;
-    box-shadow: 1px 1px 10px white;
-    border-radius: 5px;
-    padding: 20px 10px;
   }
   .header {
     display: flex;

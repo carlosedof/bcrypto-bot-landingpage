@@ -27,7 +27,7 @@ const styles = {
         backgroundColor: 'black',
         transition: 'all 0.3s ease',
         fontSize: '16px',
-        height: '150px',
+        height: '250px',
         justifyContent: 'space-around',
         borderRadius: '10px',
         paddingBlock: '30px',
@@ -57,7 +57,7 @@ const Header = ({setIsResponsiveMenuVisible, isResponsiveMenuVisible}) => {
                 <FaTimes style={styles.icon} onClick={() => setIsResponsiveMenuVisible(s => !s)} /> :
                 <FaBars style={styles.icon} onClick={() => setIsResponsiveMenuVisible(s => !s)} />
             }
-            <Col style={{...styles.responsiveMenu, right: !isResponsiveMenuVisible ? -350 : -125}}>
+            <Col style={{...styles.responsiveMenu, right: -50, top: !isResponsiveMenuVisible ? -350 : 35}}>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Header'}>Home</AnchorLink>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Features'}>Features</AnchorLink>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Prices'}>Prices</AnchorLink>
