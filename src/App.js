@@ -16,7 +16,7 @@ function App() {
   return (
       <ApplicationContext.Provider value={{lang, setLang}}>
       <div onClick={() => setIsResponsiveMenuVisible(false)}
-           style={{backgroundColor: 'black', opacity: 0.5, width: '100%', height: '100%', position: 'fixed', zIndex: isResponsiveMenuVisible ? 1 : -1}} />
+           style={{backgroundColor: isResponsiveMenuVisible ? 'black' : 'transparent', opacity: 0.5, width: '100%', height: '100%', position: 'fixed', zIndex: isResponsiveMenuVisible ? 1 : -3}} />
       <div className="main">
         <section id='Header'>
             <Header setIsResponsiveMenuVisible={setIsResponsiveMenuVisible} isResponsiveMenuVisible={isResponsiveMenuVisible} />
