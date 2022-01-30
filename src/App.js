@@ -14,7 +14,7 @@ const styles = {
 }
 function App() {
     const [isResponsiveMenuVisible, setIsResponsiveMenuVisible] = useState()
-    const [lang, setLang] = useState('en')
+    const [lang, setLang] = useState('pt')
   return (
       <ApplicationContext.Provider value={{lang, setLang}}>
       <div className="main">

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {ApplicationContext} from "../../App";
+import {getWordFromLanguage} from "../../languages/languages";
 
 const styles = {
     container: {
@@ -25,22 +27,23 @@ const styles = {
 }
 
 const Prices = () => {
+    const {lang, setLang} = useContext(ApplicationContext)
 
     return <div style={styles.container}>
-        <span style={{fontSize: '24px', fontWeight: 'bolder', marginBottom: '20px'}}>Prices</span>
+        <span style={{fontSize: '24px', fontWeight: 'bolder', marginBottom: '20px'}}>{getWordFromLanguage('prices', lang)}</span>
         <div style={styles.priceBlock}>
             <span style={{position: 'absolute', top: 5, left: -20, transform: 'rotate(320deg)', backgroundColor: '#931f1f', borderRadius: '25px', padding: '6px', fontWeight: 'bolder'}}>best offer</span>
-            <span>Basic plan</span>
+            <span>{getWordFromLanguage('basicPlan', lang)}</span>
             <ul>
-                <li>multiple window support</li>
-                <li>discord integration</li>
-                <li>support response up to 4hs</li>
-                <li>many more...</li>
+                <li>{getWordFromLanguage('multiWindow', lang)}</li>
+                <li>{getWordFromLanguage('discordIntegration', lang)}</li>
+                <li>{getWordFromLanguage('supportResponse', lang)}</li>
+                <li>{getWordFromLanguage('manyMore', lang)}</li>
             </ul>
-            <span>promotional price</span>
-            <span>8 bcoin/month</span>
+            <span>{getWordFromLanguage('promotional', lang)}</span>
+            <span>{getWordFromLanguage('price', lang)}</span>
         </div>
-        <span style={{marginTop: '25px'}}>Bring a friend to Bcrypto bot and get extra 15 days in your registration key expiration date!</span>
+        <span style={{marginTop: '25px', textAlign: 'center'}}>{getWordFromLanguage('bringFriend', lang)}</span>
 
     </div>
 }
