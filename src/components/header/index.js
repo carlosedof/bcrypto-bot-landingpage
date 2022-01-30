@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import Fade from 'react-reveal/Fade'
 import Logo from "../../assets/logo.png";
 import {FaBars, FaTimes} from "react-icons/fa";
 import {Col, Row} from "../../common";
@@ -40,25 +41,47 @@ const styles = {
 const Header = ({setIsResponsiveMenuVisible, isResponsiveMenuVisible}) => {
     const {lang, setLang} = useContext(ApplicationContext)
     return (<div style={styles.container} className={'header'}>
-        <img style={styles.img} src={Logo} />
+        <img alt={'logo'} style={styles.img} src={Logo} />
         <Row>
-            <img onClick={() => setLang('pt')} src={Br} style={{...styles.flag, opacity: lang === 'pt' ? 1 : 0.5}} />
-            <img onClick={() => setLang('en')} src={Eua} style={{...styles.flag, opacity: lang === 'en' ? 1 : 0.5}} />
+            <img onClick={() => setLang('pt')}
+                alt={'brFlag'}
+                src={Br}
+                style={{...styles.flag, opacity: lang === 'pt' ? 1 : 0.5}} />
+            <img onClick={() => setLang('en')}
+                alt={'usaFlag'}
+                src={Eua}
+                style={{...styles.flag, opacity: lang === 'en' ? 1 : 0.5}} />
         </Row>
         <Row className={'common-menu'}>
-            <AnchorLink style={styles.link} href={'#Header'}>{getWordFromLanguage('home', lang)}</AnchorLink>
-            <AnchorLink style={styles.link} href={'#Features'}>{getWordFromLanguage('features', lang)}</AnchorLink>
-            <AnchorLink style={styles.link} href={'#Prices'}>{getWordFromLanguage('prices', lang)}</AnchorLink>
-            <AnchorLink style={styles.link} href={'#GetStarted'}>{getWordFromLanguage('getStarted', lang)}</AnchorLink>
-            <AnchorLink style={styles.link} href={'#AboutUs'}>{getWordFromLanguage('aboutUs', lang)}</AnchorLink>
+            <Fade top cascade>
+                <ul style={{display: 'flex', listStyleType: 'none', margin: 0}}>
+                    <li>
+                        <AnchorLink style={styles.link} href={'#Header'}>{getWordFromLanguage('home', lang)}</AnchorLink>
+                    </li>
+                    <li>
+                        <AnchorLink style={styles.link} href={'#Features'}>{getWordFromLanguage('features', lang)}</AnchorLink>
+                    </li>
+                    <li>
+                        <AnchorLink style={styles.link} href={'#Prices'}>{getWordFromLanguage('prices', lang)}</AnchorLink>
+                    </li>
+                    <li>
+                        <AnchorLink style={styles.link} href={'#GetStarted'}>{getWordFromLanguage('getStarted', lang)}</AnchorLink>
+                    </li>
+                    <li>
+                        <AnchorLink style={styles.link} href={'#AboutUs'}>{getWordFromLanguage('aboutUs', lang)}</AnchorLink>
+                    </li>
+                </ul>
+            </Fade>
         </Row>
         <Col className={'resp-menu'} style={styles.responsiveMenuContainer}>
             {
-                isResponsiveMenuVisible ?
-                <FaTimes style={styles.icon} onClick={() => setIsResponsiveMenuVisible(s => !s)} /> :
-                <FaBars style={styles.icon} onClick={() => setIsResponsiveMenuVisible(s => !s)} />
+                !isResponsiveMenuVisible &&
+                <FaBars style={styles.icon} size={30} onClick={() => setIsResponsiveMenuVisible(s => !s)} />
             }
-            <Col style={{...styles.responsiveMenu, right: -50, top: !isResponsiveMenuVisible ? -450 : 35}}>
+            <Col style={{...styles.responsiveMenu, right: 0, top: !isResponsiveMenuVisible ? -450 : -50}}>
+                <Row style={{justifyContent: 'flex-end', paddingRight: '10px'}}>
+                    <FaTimes style={styles.icon} onClick={() => setIsResponsiveMenuVisible(s => !s)} />
+                </Row>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Header'}>{getWordFromLanguage('home', lang)}</AnchorLink>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Features'}>{getWordFromLanguage('features', lang)}</AnchorLink>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Prices'}>{getWordFromLanguage('prices', lang)}</AnchorLink>

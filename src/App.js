@@ -9,14 +9,14 @@ import AboutUs from "./components/aboutUs";
 
 export const ApplicationContext = React.createContext({});
 
-const styles = {
-
-}
 function App() {
-    const [isResponsiveMenuVisible, setIsResponsiveMenuVisible] = useState()
-    const [lang, setLang] = useState('pt')
+    const [isResponsiveMenuVisible, setIsResponsiveMenuVisible] = useState(false)
+    const userLang = navigator.language || navigator.userLanguage;
+    const [lang, setLang] = useState(userLang === 'pt-BR' ? 'pt' : 'en')
   return (
       <ApplicationContext.Provider value={{lang, setLang}}>
+      <div onClick={() => setIsResponsiveMenuVisible(false)}
+           style={{backgroundColor: 'black', opacity: 0.5, width: '100%', height: '100%', position: 'fixed', zIndex: isResponsiveMenuVisible ? 1 : -1}} />
       <div className="main">
         <section id='Header'>
             <Header setIsResponsiveMenuVisible={setIsResponsiveMenuVisible} isResponsiveMenuVisible={isResponsiveMenuVisible} />

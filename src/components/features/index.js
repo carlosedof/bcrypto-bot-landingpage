@@ -1,4 +1,5 @@
 import React, {useContext, useMemo} from 'react';
+import Fade from 'react-reveal/Fade';
 import {Col, Row} from "../../common";
 import {getWordFromLanguage} from "../../languages/languages";
 import {ApplicationContext} from "../../App";
@@ -31,7 +32,7 @@ const styles = {
     }
 }
 const Features = () => {
-    const {lang, setLang} = useContext(ApplicationContext)
+    const {lang} = useContext(ApplicationContext)
     const FEATS = useMemo(() => {
         return [
             {
@@ -75,15 +76,17 @@ const Features = () => {
     // getWordFromLanguage('home', lang)
     // https://www.youtube.com/watch?v=OGGuw2dLBjk
     return <Col style={styles.container}>
-        <span style={{fontSize: '24px', fontWeight: 'bolder'}}>{getWordFromLanguage('features', lang)}</span>
-        <Row style={styles.features}>
-            { FEATS.map((feat, i) => (
-                <div className={'card'} key={i} style={{background: `linear-gradient(161deg, rgba(38,53,77,1) 0%, rgba(0,0,0,1) 22%, ${feat.color} 66%, rgba(1,1,1,1) 100%)`}}>
-                    <span style={styles.title}>{feat.title}</span>
-                    <span style={styles.subtitle}>{feat.subtitle}</span>
-                </div>
-            ))}
-        </Row>
+        <span style={{fontSize: '24px', fontWeight: '700'}}>{getWordFromLanguage('features', lang)}</span>
+        <Fade bottom>
+            <Row style={styles.features}>
+                { FEATS.map((feat, i) => (
+                    <div className={'card'} key={i} style={{background: `linear-gradient(161deg, rgba(38,53,77,1) 0%, rgba(0,0,0,1) 22%, ${feat.color} 66%, rgba(1,1,1,1) 100%)`}}>
+                        <span style={styles.title}>{feat.title}</span>
+                        <span style={styles.subtitle}>{feat.subtitle}</span>
+                    </div>
+                ))}
+            </Row>
+        </Fade>
     </Col>
 }
 

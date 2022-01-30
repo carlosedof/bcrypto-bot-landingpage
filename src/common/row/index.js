@@ -1,7 +1,7 @@
 import React, {useMemo} from 'react';
 import './styles.css';
 
-export default ({
+const Row = ({
   onClick,
   children,
   responsive,
@@ -41,3 +41,5 @@ export default ({
       </div>
   );
 };
+
+export default Row;

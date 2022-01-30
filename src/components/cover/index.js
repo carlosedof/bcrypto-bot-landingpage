@@ -1,4 +1,5 @@
 import React from 'react';
+import Jump from 'react-reveal/Jump';
 import Background from '../../assets/BGgray.png';
 import Hero from '../../assets/BcoinTokenHero.png';
 import Window from '../../assets/window.png';
@@ -24,8 +25,12 @@ const styles = {
 
 const Cover = () => {
     return <div style={styles.container}>
-        <img style={styles.img} className={'bot-image'} src={Hero} />
-        <img style={styles.window} src={Window} />
+        <Jump>
+            <div style={styles.img}>
+                <img alt={'heroImg'} style={{maxWidth: '100%'}} className={'bot-image'} src={Hero} />
+            </div>
+        </Jump>
+        <img  alt={'botImg'} style={styles.window} src={Window} />
     </div>
 }
 
