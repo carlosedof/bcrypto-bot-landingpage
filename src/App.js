@@ -6,6 +6,7 @@ import Prices from "./components/prices";
 import GetStarted from "./components/getStarted";
 import Footer from "./components/footer";
 import AboutUs from "./components/aboutUs";
+import Download from "./components/download";
 
 export const ApplicationContext = React.createContext({});
 
@@ -29,6 +30,9 @@ function App() {
         </section>
         <section id='Prices'>
             <Prices />
+        </section>
+        <section id='Download'>
+            <Download />
         </section>
         <section id='GetStarted'>
             <GetStarted />

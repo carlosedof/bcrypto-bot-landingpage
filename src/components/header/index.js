@@ -65,6 +65,9 @@ const Header = ({setIsResponsiveMenuVisible, isResponsiveMenuVisible}) => {
                         <AnchorLink style={styles.link} href={'#Prices'}>{getWordFromLanguage('prices', lang)}</AnchorLink>
                     </li>
                     <li>
+                        <AnchorLink style={styles.link} href={'#Download'}>{getWordFromLanguage('download', lang)}</AnchorLink>
+                    </li>
+                    <li>
                         <AnchorLink style={styles.link} href={'#GetStarted'}>{getWordFromLanguage('getStarted', lang)}</AnchorLink>
                     </li>
                     <li>
@@ -85,6 +88,7 @@ const Header = ({setIsResponsiveMenuVisible, isResponsiveMenuVisible}) => {
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Header'}>{getWordFromLanguage('home', lang)}</AnchorLink>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Features'}>{getWordFromLanguage('features', lang)}</AnchorLink>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Prices'}>{getWordFromLanguage('prices', lang)}</AnchorLink>
+                <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#Download'}>{getWordFromLanguage('download', lang)}</AnchorLink>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#GetStarted'}>{getWordFromLanguage('getStarted', lang)}</AnchorLink>
                 <AnchorLink style={styles.link} onClick={() => setIsResponsiveMenuVisible(false)} href={'#AboutUs'}>{getWordFromLanguage('aboutUs', lang)}</AnchorLink>
             </Col>

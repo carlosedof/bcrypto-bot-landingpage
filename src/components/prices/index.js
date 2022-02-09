@@ -9,7 +9,6 @@ const styles = {
         flexDirection: 'column',
         alignItems: 'center',
         marginTop: '20px',
-        marginBottom: '20px',
         paddingBlock: '50px',
         backgroundColor: 'black',
     },
@@ -34,7 +33,7 @@ const Prices = () => {
         <span style={{fontSize: '24px', fontWeight: 'bolder', marginBottom: '20px'}}>{getWordFromLanguage('prices', lang)}</span>
         <Fade>
             <div style={styles.priceBlock}>
-                <span className={'tag'} style={{position: 'absolute', zIndex: 2, top: 5, left: -25, transform: 'rotate(320deg)', backgroundColor: '#931f1f', borderRadius: '25px', padding: '6px 15px', fontWeight: 'bolder'}}>best offer</span>
+                <span className={'tag'} style={{position: 'absolute', zIndex: 2, top: 5, left: -55, transform: 'rotate(320deg)', backgroundColor: '#931f1f', borderRadius: '25px', padding: '6px 15px', fontWeight: 'bolder'}}>{getWordFromLanguage('bestoffer', lang)}</span>
                 <span>{getWordFromLanguage('basicPlan', lang)}</span>
                 <ul>
                     <li>{getWordFromLanguage('multiWindow', lang)}</li>
